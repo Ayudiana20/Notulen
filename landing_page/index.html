@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notulen - Notulis Digital Cerdas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-primary fw-bold" href="#home">Notulen</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a> </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a> </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="py-5 py-md-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-md-6 order-md-1 order-2">
+                    <h1 class="display-3 fw-bolder text-primary mb-3">Rapat pintar, hasil nyata.</h1> 
+                    <p class="lead text-muted mb-4">Notulen cerdas yang mengubah rapat jadi aksi nyata.</p> 
+                    <button class="btn btn-success btn-lg shadow-sm" data-bs-toggle="modal" data-bs-target="#registerModal">Coba Sekarang!</button> 
+                </div>
+                <div class="col-md-6 order-md-2 order-1 text-center">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-5">Bicarakan ide, biarkan sistem yang mencatat.</h2>            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Manajemen notulen instan</h3>
+                            <p class="card-text">Dapat membuat, mengedit, dan mengarsipkan notulen lengkap dengan judul, tanggal, isi rapat, serta daftar penanggung jawab.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Pencarian notulen</h3>
+                            <p class="card-text">Pengguna bisa menemukan notulen dengan cepat melalui fitur pencarian berdasarkan tanggal rapat, topik pembahasan, atau kata kunci tertentu, memudahkan akses ke catatan yang dibutuhkan.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">Penyimpanan Notulen</h3>
+                            <p class="card-text">Sistem menyimpan notulen lengkap dengan detail rapat seperti peserta, agenda, keputusan, serta file lampiran yang terkait memastikan semua informasi rapat terdokumentasi dengan rapi dan mudah diakses kembali.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="#" class="text-secondary mx-2 text-decoration-none">Kebijakan Privasi</a> | 
+                <a href="#" class="text-secondary mx-2 text-decoration-none">Syarat & Ketentuan</a> |
+                <a href="#" class="text-secondary mx-2 text-decoration-none">Hubungi Kami</a>
+            </div>
+            <p class="mb-0">&copy; 2025 Notulen. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Masuk ke Notulen</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="emailInput" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailInput" required>
+              </div>
+              <div class="mb-3">
+                <label for="passwordInput" class="form-label">Kata Sandi</label>
+                <input type="password" class="form-control" id="passwordInput" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Masuk</button>
+            </form>
+            <p class="text-center mt-3"><a href="#" class="text-decoration-none">Lupa Kata Sandi?</a></p>
+          </div>
+          <div class="modal-footer justify-content-center">
+             <p>Belum punya akun? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal" class="text-success fw-bold">Daftar Sekarang</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Daftar Gratis 14 Hari</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Mulai otomatisasi notulen Anda tanpa kartu kredit.</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email Kantor" required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Mulai Uji Coba Gratis</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
