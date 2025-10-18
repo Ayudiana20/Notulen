@@ -49,14 +49,14 @@ body {
     min-width: 260px;
 }
 
-.toggle-btn {
+.toggle-sidebar {
     background-color: transparent;
     cursor: pointer;
     border: 0;
     padding: 1rem 1.5rem;
 }
 
-.toggle-btn i {
+.toggle-sidebar i {
     font-size: 1.5rem;
     color: #FFF;
 }
@@ -111,9 +111,13 @@ a.sidebar-link {
     margin-right: .75rem;
 }
 
-a.sidebar-link:hover {
+.sidebar-item .active {
     background-color: rgba(255, 255, 255, .075);
     border-left: 3px solid #3b7ddd;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
 }
 
 .sidebar-item {
@@ -169,6 +173,24 @@ a.sidebar-link:hover {
     width: 40px;
 }
 
+main .notulen{
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	padding: 10px;
+}
 
+.judul h2{
+	margin-left: 10px;
+	font-size: 25px;
+}
 
-@media (min-width: 768px) {}
+@media screen and (max-width: 768px) {
+    #content {
+		position: relative;
+		width: calc(100% - 60px);
+		transition: all .3s ease;
+	}
+    .notulen{
+        overflow-x: auto;
+    }
+}
