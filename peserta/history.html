@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notulen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.4/css/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-sidebar" type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="#">Notulen</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="index.html" class="sidebar-link">
+                        <i class="fa-solid fa-book"></i>
+                        <span>Agenda Rapat</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="history.html" class="sidebar-link active">
+                        <i class="fa-solid fa-note-sticky"></i>
+                        <span>Riwayat Rapat</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="login.html" class="sidebar-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <div class="main">
+            <main class="content px-3 py-4">
+                <div class="notulen">
+                    <div class="judul">
+                        <h2>History Rapat</h2>
+                    </div>
+                    <table id="example" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th>Judul Rapat</th>
+                                <th>Tanggal Rapat</th>
+                                <th>Jam Rapat</th>
+                                <th>Unit</th>
+                                <th>Ruangan</th>
+                                <th class="text-center">Cek Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>Rapat Lomba</td>
+                                <td>25-09-2025</td>
+                                <td>10:00 WIB</td>
+                                <td>KUAS</td>
+                                <td>Ruang GU 702</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-success aksi"><i
+                                            class="fa-solid fa-arrow-down"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>Rapat Lomba</td>
+                                <td>25-09-2025</td>
+                                <td>10:00 WIB</td>
+                                <td>KUAS</td>
+                                <td>Ruang GU 702</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa-solid fa-info"></i></button>
+                                    <button type="button" class="btn btn-success aksi"><i
+                                            class="fa-solid fa-arrow-down"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>Rapat Lomba</td>
+                                <td>25-09-2025</td>
+                                <td>10:00 WIB</td>
+                                <td>KUAS</td>
+                                <td>Ruang GU 702</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-success aksi"><i
+                                            class="fa-solid fa-arrow-down"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>Rapat Lomba</td>
+                                <td>25-09-2025</td>
+                                <td>10:00 WIB</td>
+                                <td>KUAS</td>
+                                <td>Ruang GU 702</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-success aksi"><i
+                                            class="fa-solid fa-arrow-down"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
