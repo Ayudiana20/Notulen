@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles2.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AdminPanel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="d-flex ms-auto">
+        <button class="btn btn-outline-light btn-sm" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 bg-sidebar sidebar d-md-block collapse show" id="sidebarMenu">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="admin.html">🏠 Beranda</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">🔍 Tambah Rapat</a></li>
+            <li class="nav-item"><a class="nav-link" href="notulens.html">📋 Notulen</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 content-area">
+        <h1 class="h2 mb-3 fw-bold text-primary">Tambah Rapat</h1>
+        <p>Selamat datang di halaman admin.</p>
+
+        <div class="mb-3">
+          <strong>Peran saat ini:</strong> <span id="roleDisplay">Notulis</span>
+          <button class="btn btn-sm btn-outline-secondary ms-2" onclick="switchRole()">Ganti Peran</button>
+        </div>
+
+        <button id="addMeetingBtn" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+          Tambah Rapat +
+        </button>
+
+        <div class="table-responsive table-wrap">
+          <table class="table table-bordered align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>ID</th>
+                <th>Judul Rapat</th>
+                <th>Tanggal</th>
+                <th>Jam</th>
+                <th>Unit</th>
+                <th>Ruangan</th>
+                <th>Catatan</th>
+              </tr>
+            </thead>
+            <tbody id="rapatTableBody">
+              <tr id="placeholderRow">
+                <td colspan="7" class="text-center text-muted">Belum ada data rapat.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL TAMBAH RAPAT -->
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="rapatForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Tambah Rapat Baru</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="mb-3">
+            <label for="idRapat" class="form-label">ID Rapat</label>
+            <input type="text" class="form-control" id="idRapat" placeholder="Contoh: RPT-001" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="judul" class="form-label">Judul Rapat</label>
+            <input type="text" class="form-control" id="judul" placeholder="Masukkan judul rapat" required>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="tanggal" class="form-label">Tanggal Rapat</label>
+              <input type="date" class="form-control" id="tanggal" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="jam" class="form-label">Jam Rapat</label>
+              <input type="time" class="form-control" id="jam" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="unit" class="form-label">Unit</label>
+            <input type="text" class="form-control" id="unit" placeholder="Masukkan unit terkait" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="ruangan" class="form-label">Ruangan</label>
+            <input type="text" class="form-control" id="ruangan" placeholder="Masukkan ruangan rapat" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="catatan" class="form-label">Catatan Notulen</label>
+            <textarea class="form-control" id="catatan" rows="3" placeholder="Masukkan catatan singkat..." required></textarea>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let currentRole = "Notulis";
+
+    function switchRole() {
+      currentRole = currentRole === "Notulis" ? "Anggota" : "Notulis";
+      document.getElementById("roleDisplay").textContent = currentRole;
+      document.getElementById("addMeetingBtn").style.display =
+        currentRole === "Notulis" ? "inline-block" : "none";
+    }
+
+    document.getElementById("rapatForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const id = document.getElementById("idRapat").value.trim();
+      const judul = document.getElementById("judul").value.trim();
+      const tanggal = document.getElementById("tanggal").value;
+      const jam = document.getElementById("jam").value;
+      const unit = document.getElementById("unit").value.trim();
+      const ruangan = document.getElementById("ruangan").value.trim();
+      const catatan = document.getElementById("catatan").value.trim();
+      const tableBody = document.getElementById("rapatTableBody");
+
+      if (!id || !judul || !tanggal || !jam || !unit || !ruangan || !catatan) {
+        alert("Harap isi semua kolom sebelum menyimpan!");
+        return;
+      }
+
+      const placeholder = document.getElementById("placeholderRow");
+      if (placeholder) placeholder.remove();
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${id}</td>
+        <td>${judul}</td>
+        <td>${tanggal}</td>
+        <td>${jam}</td>
+        <td>${unit}</td>
+        <td>${ruangan}</td>
+        <td>${catatan}</td>
+      `;
+      tableBody.appendChild(row);
+
+      document.getElementById("rapatForm").reset();
+      const modal = bootstrap.Modal.getInstance(document.getElementById("addModal"));
+      modal.hide();
+    });
+
+    window.onload = () => switchRole();
+
+    function logout() {
+      localStorage.clear();
+      sessionStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

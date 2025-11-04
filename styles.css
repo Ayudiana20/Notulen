@@ -1,0 +1,207 @@
+/* =========================================================
+   GLOBAL STYLE
+========================================================= */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+}
+
+/* Tombol gradasi */
+.btn-gradient {
+    background: linear-gradient(90deg, #007bff, #7209b7);
+    color: #fff !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #0056b3, #560bad);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+    transition: all 0.4s ease;
+    background: linear-gradient(90deg, #007bff, #5a00b7);
+    background-size: 200% 200%;
+    animation: gradientSlide 10s ease infinite;
+}
+
+/* Animasi gradasi navbar */
+@keyframes gradientSlide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Brand putih */
+.navbar-brand.text-white {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+.navbar-brand.text-white:hover {
+    color: #ffd700 !important;
+}
+
+/* Logo */
+.logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.navbar-brand:hover .logo {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+/* Link navbar */
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: #ffd700 !important;
+}
+
+/* Efek sticky dan blur */
+.navbar.sticky-top {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+/* =========================================================
+   HERO SECTION (SPANDUK)
+========================================================= */
+/* =========================================================
+   HERO SECTION (SPANDUK)
+========================================================= */
+#home {
+    background: linear-gradient(135deg, #b3e5fc, #e0f7fa, #ffffff); /* 🌤️ biru muda lembut */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    transition: background 0.5s ease;
+}
+
+/* Warna teks agar kontras di atas biru muda */
+#home h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0d47a1; /* biru tua */
+}
+#home p {
+    font-size: 1.15rem;
+    color: #1565c0; /* sedikit lebih terang dari judul */
+}
+
+/* Gambar rapat */
+.hero-image {
+    max-height: 420px;
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    transition: transform 0.4s ease;
+}
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* =========================================================
+   ABOUT / FITUR
+========================================================= */
+#about h2 {
+    color: #0d6efd;
+    margin-bottom: 3rem;
+}
+.feature-card {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+    background: linear-gradient(135deg, #001f3f, #003566, #0077b6, #7209b7);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
+    color: #ffffff;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+/* Glow lembut di atas footer */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+    filter: blur(25px);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer a {
+    color: #d1e9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.footer p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+@media (max-width: 992px) {
+    #home {
+        text-align: center;
+        padding-top: 100px;
+    }
+    #home h1 {
+        font-size: 2.8rem;
+    }
+    .hero-image {
+        margin-top: 40px;
+    }
+    .feature-card {
+        margin-bottom: 20px;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}

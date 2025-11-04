@@ -1,0 +1,62 @@
+body {
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* 🌊 Navbar atas dan Sidebar kiri (warna sama persis) */
+.navbar,
+.bg-sidebar {
+  background: linear-gradient(90deg, #0775ea, #3b0472);
+  color: white;
+}
+
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar kiri */
+.sidebar {
+  position: sticky;
+  top: 56px; /* tinggi navbar */
+  height: calc(100vh - 56px);
+  padding-top: 1rem;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Item menu di sidebar */
+.sidebar .nav-link {
+  color: #e0e8ff;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Tombol logout */
+.btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #05274b;
+}
+
+/* Konten utama */
+main {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 20px;
+}

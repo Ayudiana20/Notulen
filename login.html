@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notulen - Login</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-box">
+      <h1 class="app-title">Notulen</h1>
+      <p class="app-desc">Disinilah Anda dapat dengan mudah<br>melacak jadwal dan catatan rapat Anda</p>
+
+      <form id="loginForm">
+        <select id="userType" class="form-control" required>
+          <option disabled selected value="">Pilih jenis user</option>
+          <option value="admin">Admin</option>
+          <option value="pengguna">Pengguna</option>
+        </select>
+
+        <input type="text" id="username" placeholder="Username pengguna" class="form-control" required>
+        <input type="password" id="password" placeholder="Password pengguna" class="form-control" required>
+
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+
+      <p id="warning" style="color: red; display: none; margin-top: 10px;"></p>
+    </div>
+  </div>
+
+  <script src="script1.js"></script>
+</body>
+</html>

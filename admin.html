@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles2.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AdminPanel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="d-flex ms-auto">
+        <button class="btn btn-outline-light btn-sm" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Layout -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 bg-sidebar sidebar d-md-block collapse show" id="sidebarMenu">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link active" href="#">🏠 Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="tambah-rapat.html">🔍 Tambah Rapat</a></li>
+            <li class="nav-item"><a class="nav-link" href="notulens.html">📋 Notulen</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content (UPDATED) -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 content-area">
+        <h1 class="h2 mb-4 fw-bold text-primary">Selamat Datang di Panel Admin 🎯</h1>
+        <p class="text-secondary mb-4">
+          Halo, <strong>Admin!</strong> — di sini Anda dapat memantau aktivitas rapat, mengelola notulen, dan mengatur jadwal dengan mudah.
+        </p>
+
+        <!-- Statistik Card -->
+        
+
+        
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
